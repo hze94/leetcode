@@ -15,10 +15,6 @@ var groupAnagrams = function(strs) {
   // 3. 存到结果中
   var result = new Map();
 
-  // 判断是否是字母异位词
-  function isSameType(a, b) {
-    return a.split('').sort().join('') === a.split('').sort().join();
-  }
   //          i
   // strs = ["eat", "tea", "tan", "ate", "nat", "bat"]
   // result = []
