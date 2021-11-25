@@ -1,3 +1,10 @@
+/*
+ * @lc app=leetcode.cn id=146 lang=javascript
+ *
+ * [146] lru-缓存机制
+ */
+
+// @lc code=start
 /**
  * @param {number} capacity
  */
@@ -43,3 +50,5 @@ LRUCache.prototype.put = function(key, value) {
  * var param_1 = obj.get(key)
  * obj.put(key,value)
  */
+
+// @lc code=end
