@@ -33,7 +33,6 @@ var serialize = function(root) {
     dfs(root.left);
     dfs(root.right);
   }
-  console.log(ansList.join(','))
   return ansList.join(',');
 };
 
@@ -45,6 +44,7 @@ var serialize = function(root) {
  */
 var deserialize = function(data) {
   const seq = data.split(',');
+  // 思路，从头开始用每个元素来创建每棵树的根节点
   let curr = 0;
   return restore();
   function restore() {
