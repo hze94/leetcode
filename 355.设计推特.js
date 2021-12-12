@@ -35,9 +35,11 @@ Twitter.prototype.getNewsFeed = function(userId) {
     if (user === userId || (followees && followees.has(user))) {
       result.push(tweet);
     }
+    // 取10条tweet
+    if (result.length === 10) break;
   }
 
-  return result.slice(0, 10);
+  return result;
 };
 
 /** 
