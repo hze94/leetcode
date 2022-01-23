@@ -9,28 +9,27 @@ int a[N];
 
 int main()
 {
-    int n;
-    cin>>n;
-    set<pair<int,int>> A;
-    A.insert({INT_MIN,0});
-    A.insert({INT_MAX,0});
-    for(int i=1;i<=n;i++) {
-        int a;
-        cin >> a;
-        if(i>1) {
-            auto it=A.upper_bound({a,0});
-            auto lt=it;
-            lt--;
-            long long left=(long long) lt->first-a;
-            long long right=(long long) it->first-a;
-            if(abs(left)<=abs(right))//可以先存一下
-            {
-                cout<<abs(left)<<' '<<lt->second<<endl;
-            }
-            else cout<<abs(right)<<' '<<it->second<<endl;
-        }
-
-        A.insert({a,i});
+  int n;
+  cin>>n;
+  set<pair<int,int>> A;
+  A.insert({INT_MIN, 0});
+  A.insert({INT_MAX, 0});
+  for (int i = 1;i <= n; i++) {
+    int a;
+    cin >> a;
+    if(i > 1) {
+      auto it = A.upper_bound({a, 0});
+      auto lt = it;
+      lt--;
+      long long left = (long long) lt->first-a;
+      long long right = (long long) it->first-a;
+      if(abs(left) <= abs(right)) {
+          cout<<abs(left)<<' '<<lt->second<<endl;
+      }
+      else cout<<abs(right)<<' '<<it->second<<endl;
     }
-    return 0;
+
+    A.insert({a, i});
+  }
+  return 0;
 }
